@@ -1,0 +1,27 @@
+/* Style du document */
+
+section {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: var(--mpm-c-section-bg) ;
+    border-radius: 10px;
+    border: 1px solid #ffffff1f;
+}
+
+section h2 {
+    color: white;
+    margin: 12px 0;
+}
+
+section h2:not(:first-child) {
+    margin: 48px 0 12px;
+}
+
+section div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}

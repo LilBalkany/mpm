@@ -1,0 +1,475 @@
+:root {
+    --mpm-c-main-bg: #0C0D24;
+    --mpm-c-section-bg: #15162F;
+    --mpm-c-accent: #1AEBE7;
+    --mpm-c-text-dark: #33446B;
+
+    --mpm-c-cta-bg: #fff;
+    --mpm-c-cta-ripple-bg: var(--mpm-c-accent);
+    --mpm-c-cta-hover: #1E1F51;
+    --mpm-c-cta-text-hover: #fff;
+
+    font-family: "Fredoka", sans-serif;
+}
+
+/* Boutons */
+
+/* Anims */
+
+
+@keyframes natureAnim {
+    0% {
+        clip-path: ellipse(0% 0% at 50% 50%);
+        transform: scale(.8) rotate(-10deg);
+    }
+
+    100% {
+        clip-path: ellipse(75% 75% at 50% 50%);
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes histoireAnim {
+    0% {
+        transform: translate(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(5px, 5px) rotate(7deg);
+    }
+
+    50% {
+        transform: translate(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-5px, 5px) rotate(-7deg);
+    }
+
+    100% {
+        transform: translate(0) rotate(0deg);
+    }
+}
+
+@keyframes decouvertesAnim {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+
+    25% {
+        transform: translateY(-3px) scaleY(1.04);
+    }
+
+    50% {
+        transform: translateY(1px) scaleY(.98);
+    }
+
+    75% {
+        transform: translateY(-2px) scaleY(1.02);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes recitsAnim {
+    0% {
+        transform: rotate(80deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(80deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes spaceAnim {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(45deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes ensembleAnim {
+    0% {
+        /* transform: scale(0.98); */
+        transform: rotate(160deg);
+    }
+
+    /* 90% {
+        transform: scale(1.15); 
+    } */
+
+    100% {
+        /* transform: scale(1); */
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes creationsAnim {
+    0% {
+        transform: translateY(0) scaleY(1) rotate(0);
+    }
+
+    25% {
+        transform: translateY(-3px) scaleY(1.04) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(1px) scaleY(.98) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-2px) scaleY(1.02) rotate(-20deg);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1) rotate(4deg);
+    }
+}
+
+@keyframes experiencesAnim {
+    0% {
+        transform: rotate(0) translate(0, 0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes moreAnim {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+
+    25% {
+        transform: translateX(-3px) scaleX(1.04);
+    }
+
+    50% {
+        transform: translateX(1px) scaleX(.98);
+    }
+
+    75% {
+        transform: translateX(-2px) scaleX(1.02);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes plusAnim {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes readAnim {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+
+    25% {
+        transform: translateY(-3px) scaleY(1.04);
+    }
+
+    50% {
+        transform: translateY(1px) scaleY(.98);
+    }
+
+    75% {
+        transform: translateY(-2px) scaleY(1.02);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes watchAnim {
+    0% {
+        transform: translateY(0) scaleY(1) rotate(0);
+    }
+
+    25% {
+        transform: translateY(-3px) scaleY(1.04) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(1px) scaleY(.98) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-2px) scaleY(1.02) rotate(-20deg);
+    }
+
+    100% {
+        transform: translateY(0) scaleY(1) rotate(4deg);
+    }
+}
+
+@keyframes searchAnim {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(45deg);
+    }
+}
+
+/* CTA de base */
+
+.mpm-cta {
+    position: relative;
+    overflow: hidden;
+
+    width: fit-content;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 32px;
+
+    background-color: var(--mpm-c-cta-bg);
+    box-shadow: #1aebe800 0px 0px 10px;
+    border-radius: 40px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 250%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background-color: var(--mpm-c-cta-ripple-bg);
+        z-index: 1;
+
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: 
+            transform .4s ease-in, 
+            opacity .2s ease-in;
+    }
+
+    span {
+        color: var(--mpm-c-text-dark);
+    }
+
+    img,
+    span {
+        z-index: 2;
+    }
+
+    &:hover {
+        box-shadow: #1aebe83d 0px 0px 40px;
+    }
+
+    &:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    &:hover img {
+        animation: 
+        var(--mpm-cta-universe-anim) 
+        var(--mpm-cta-universe-anim-timing) 
+        ease-in 
+        var(--mpm-cta-universe-anim-loop)
+        4
+        forwards;
+    }
+}
+
+/* Modifieur CTA Univers */
+
+.mpm-cta.mpm-cta--univers {
+    --mpm-c-cta-bg: var(--mpm-c-accent);
+    --mpm-c-cta-ripple-bg: #fff;
+
+    padding: 0 14px;
+    transform: translateY(0);
+    box-shadow: #1aebe800 0px 0px 10px;
+    transition:
+         transform 0.2s ease-in, 
+         box-shadow 0.2s ease-in;
+
+    img {
+        transform: rotate(0);
+    }
+
+    &:hover {
+        box-shadow: #1aebe83d 0px 0px 40px;
+    }
+}
+
+.mpm-cta.mpm-cta--secondary {
+    --mpm-c-text-dark: white;
+    --mpm-c-cta-bg: var(--mpm-c-cta-hover);
+    --mpm-c-cta-ripple-bg: white;
+
+    &:hover span {
+        color: #33446B;
+    }
+
+    &:hover img {
+        filter: invert(1) brightness(0.8) hue-rotate(236deg);
+    }
+}
+
+/* Tabs */
+
+.mpm-tabs-wrapper {
+    height: 65px;
+    width: fit-content;
+
+    padding: 4px;
+
+    overflow: hidden;
+    background-color: white;
+    border-radius: 60px;
+    border: 1px solid #BDBDCF;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    .mpm-tab {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        background: white;
+        padding: 0 40px;
+        border-radius: 60px;
+
+        transition: background-color .2s ease-in ;
+
+        &:hover {
+            background-color: var(--mpm-tab-on-bg);
+
+        &:hover span {
+            color: white;
+        }
+        &:hover img {
+                filter: invert(1) brightness(1) contrast(6);
+                animation: 
+                        var(--mpm-cta-universe-anim) 
+                        var(--mpm-cta-universe-anim-timing) 
+                        ease-in 
+                        var(--mpm-cta-universe-anim-loop)
+                        3
+                        forwards;
+        }
+    }
+    }
+
+    span {
+        color: var(--mpm-c-text-dark);
+    }
+
+    .mpm-tab-on {
+        background-color: #A600FF;
+        border-radius: 60px;
+        border: 1px solid #7102E0;
+        box-shadow: 
+            0 3px 15px 0px #1618a533, 
+            0 -1px 18px 0px #1618a533;
+
+        span {
+            color: white;
+        }
+
+        img {
+            filter: invert(1) brightness(1) contrast(6);
+        }
+    }
+}
+
+/* UI */
+
+.mpm-UI {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    aspect-ratio: 1/1;
+    border: 2px solid #2C3B71;
+    border-radius: 100%;
+    background-color: unset;
+
+    img {
+        width: 18px;
+        height: auto;
+        z-index: 2;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250%;
+        aspect-ratio: 1;
+
+        border-radius: 50%;
+        background-color: var(--mpm-c-cta-ripple-bg);
+        z-index: 1;
+
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: 
+            transform .4s ease-in, 
+            opacity .2s ease-in;
+    }
+
+    &:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+        &:hover img {
+            filter: invert(1) brightness(1) contrast(6);
+            animation:                         
+            var(--mpm-cta-universe-anim) 
+            var(--mpm-cta-universe-anim-timing) 
+            ease-in 
+            var(--mpm-cta-universe-anim-loop)
+            3
+            forwards;
+        }
+}
